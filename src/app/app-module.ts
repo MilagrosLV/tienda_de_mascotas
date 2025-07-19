@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { HamsterList } from './hamster-list/hamster-list';
+import { ShoppingCart } from './shopping-cart/shopping-cart';
 
 @NgModule({
-  declarations: [
-    App
+  declarations: [ //Declaro todo los componentes  que voy a usar
+    App,
+    HamsterList,
+    ShoppingCart
   ],
   imports: [
     BrowserModule,
@@ -15,6 +19,6 @@ import { App } from './app';
   providers: [
     provideBrowserGlobalErrorListeners()
   ],
-  bootstrap: [App]
+  bootstrap: [App] //Este es el root component
 })
 export class AppModule { }

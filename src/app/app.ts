@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.scss'
 })
 export class App {
-  protected title = 'tienda_de_mascotas';
+  protected title = 'Tienda de Mascotas';
+
+  
 }
