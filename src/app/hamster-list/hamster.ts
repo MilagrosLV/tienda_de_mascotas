@@ -5,4 +5,5 @@ export interface Hamster {
   price: number;
   stock: number;
   image: string;
+  clearance: boolean;
 }

@@ -9,28 +9,33 @@
         </tr>
     </thead>
     <tbody>
-    <tr>
-        <td><img [src]="hamster.image" [alt]="hamster.type"/></td>
-        <td>{{hamster.type}}</td>
-        <td>{{hamster.price}}</td>
-        <td>{{hamster.stock}}</td>
-        <td>
-            <button class="btn btn-info">Add to cart</button>
-        </td>
-        <!--<td>
-            <button (click)="addToCart(hamster.id)" class="btn btn-add">Add to cart</button>
-        </td> -->
+        @for (hamster of hamsters; track hamster.type) { <!--"track" funciona como id-->
 
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <button class="btn btn-info">Add to cart</button>
-        </td>
-    </tr>
+            <tr [ngClass]="{'clearance': hamster.clearance}"><!--[ngClass]"{'nombreclase': condición}" manipula clases CSS, directiva de atributo -->
+                <td><img [src]="hamster.image" [alt]="hamster.type"/></td>
+                <td>{{hamster.type}}</td>
+                <td>{{hamster.price | currency}}</td>
+                @if (hamster.stock > 0) {
+                    <td>{{hamster.stock}}</td>
+                    <td>
+                        <button class="btn btn-info">Agregar a carro</button>
+                    </td>
+                    <!--<td>
+                        <button (click)="addToCart(hamsters.id)" class="btn btn-add">Add to cart</button>
+                    </td> -->
+                } @else {
+                    <td><span class="badge text-bg-warning">Sin Stock</span></td>
+                    <td>
+                        <button class="btn btn disabled">No se puede agregar a carro</button>
+                    </td>
+                }
 
-</tbody>
+            </tr>
+        } @empty { <!--"@empty" funciona si el arreglo está vacío, es como un "@if" -->
+            <tr>
+                <td colspan="4">No hay hamsters para mostrar</td>
+            </tr>
+        }
+
+    </tbody>
 </table>
