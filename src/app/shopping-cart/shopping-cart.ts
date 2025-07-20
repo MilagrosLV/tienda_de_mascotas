@@ -19,6 +19,11 @@ export class ShoppingCart {
       quantity: 0,
     },
   ]
+
+
+  emptyCart (cart: Hamster): void {
+    
+  }
 }
 
 

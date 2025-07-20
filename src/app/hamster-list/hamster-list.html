@@ -1,5 +1,5 @@
 <h1>Lista de hamsters:</h1>
-<table class="table">
+<table class="table text-center">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -19,16 +19,23 @@
 
                 @if (hamster.stock > 0) {
                     <td>{{hamster.stock}}</td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(hamster)">-</button>
-                            <input type="text" [(ngModel)]="hamster.quantity" (keyup)="changeQuantity($event, hamster)"> 
-                                <!--[(ngModel)] estamos conectados ida y vuelta, "la cajita de banana"-->
-                                <!--(keyup) evento-->
-                        <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(hamster)">+</button>  
-                    </td>
-                    <!--<td>
-                        <button (click)="addToCart(hamsters.id)" class="btn btn-add">Add to cart</button>
-                    </td> -->
+                    <div class="input-group">
+                        <td class="input-group">
+                            <div class="input-group-prepend">                            
+                                <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(hamster)">-</button>
+                            </div>
+                                <input type="number" [(ngModel)]="hamster.quantity" (keyup)="changeQuantity($event, hamster)"> 
+                                    <!--[(ngModel)] estamos conectados ida y vuelta, "la cajita de banana"-->
+                                    <!--(keyup) evento-->
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(hamster)">+</button>  
+                            </div>
+                        </td>
+                        <!--<td>
+                            <button (click)="addToCart(hamsters.id)" class="btn btn-add">Add to cart</button>
+                        </td> -->
+                    </div>
+                    
                 } @else {
                     <td><span class="badge text-bg-warning">Sin Stock</span></td>
                     <td>

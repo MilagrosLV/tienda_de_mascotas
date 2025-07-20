@@ -6,13 +6,15 @@ import { App } from './app';
 import { HamsterList } from './hamster-list/hamster-list';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
 
-import {FormsModule} from '@angular/forms'; //Permite Two-Ways Data Binding
+import {FormsModule} from '@angular/forms';
+import { ShopAbout } from './shop-about/shop-about'; //Permite Two-Ways Data Binding
 
 @NgModule({
   declarations: [ //Declaro todo los componentes  que voy a usar
     App,
     HamsterList,
-    ShoppingCart
+    ShoppingCart,
+    ShopAbout
   ],
   imports: [
     BrowserModule,
