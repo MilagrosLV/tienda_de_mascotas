@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hamster } from "./hamster";
+import { HamsterCart } from '../hamster-cart'; //Importar SERVICIO
 
 @Component({
   selector: 'app-hamster-list',
@@ -41,7 +42,14 @@ export class HamsterList { //"export" makes the inteface public
 
   ];
 
-  constructor(){ }
+  constructor(private cart: HamsterCart){ //El COMPONENTE necesita un Service. 
+  // Inyectamos la dependencia del servicio. 
+  // Se crea una variable privada con una instancia del servicio.    
+  }
+
+  addToCart(hamster: Hamster): void{ //usamos service
+    this.cart.addToCart(hamster);
+  }
 
   mError(m: string){
     alert(m);

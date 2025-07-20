@@ -1,7 +1,7 @@
 <img src="../../assets/img/cart.png" alt="imagen de carrito de compras">
 <table class="table text-center">
     
-    @if (cart.length > 0){
+    
     <thead>
         <tr>
             <th>Nombre</th>
@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (hamster of cart; track hamster.type) { 
+        <!--@for (hamster of cart; track hamster.type) { 
 
             <tr [ngClass]="{'clearance': hamster.clearance}">
                 <td>{{hamster.type}}</td>
@@ -33,7 +33,6 @@
                     <button class="btn btn-danger">Vaciar carro</button>
                 </td>
             </tr>
-        }
+        } -->
     </tbody>
-    }
 </table>

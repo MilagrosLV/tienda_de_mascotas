@@ -22,6 +22,10 @@
                     <td>
                         <app-input-integer [(quantity)] = "hamster.quantity" [max] = "hamster.stock" (mError)="mError($event)"></app-input-integer>
                             <!--hacemos HERENCIA-->
+                        <button class="btn btn-light" (click)="addToCart(hamster)">Agregar</button>
+                        <!--<div>
+                            <button (click)="addToCart(hamster)" class="btn btn-add">Add to cart</button>
+                        </div>-->
                     </td>
                     
                 } @else {
