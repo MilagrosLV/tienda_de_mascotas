@@ -1,16 +1,23 @@
 <img src="../../assets/img/cart.png" alt="imagen de carrito de compras">
-<table class="table text-center">
+
+<ul>
+    @for (hamster of cartList$ | async; track hamster.type) {
+        <li>{{hamster.type}}: {{hamster.quantity}}</li>
+    }
+
+</ul>
+<!--<table class="table text-center">
     
     
     <thead>
-        <!--<tr>
+        <tr>
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
-        </thead>
-        </tr>-->
-    <tbody>
-        <!--@for (hamster of cart; track hamster.type) { 
+        </tr>
+        </thead>-->
+    <!--<tbody>
+        @for (hamster of cart; track hamster.type) { 
 
             <tr [ngClass]="{'clearance': hamster.clearance}">
                 <td>{{hamster.type}}</td>
@@ -33,6 +40,6 @@
                     <button class="btn btn-danger">Vaciar carro</button>
                 </td>
             </tr>
-        } -->
+        } 
     </tbody>
-</table>
+</table>-->
