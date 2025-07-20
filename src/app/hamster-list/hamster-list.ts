@@ -18,6 +18,7 @@ export class HamsterList { //"export" makes the inteface public
       stock: 5,
       image: "../../assets/img/hamster_ruso.jpg",
       clearance: false,
+      quantity: 0,
     },
 
     {
@@ -26,6 +27,7 @@ export class HamsterList { //"export" makes the inteface public
       stock: 7,
       image: "../../assets/img/hamster_chino.jpg",
       clearance: true,
+      quantity: 0,
     },
 
     {
@@ -34,9 +36,30 @@ export class HamsterList { //"export" makes the inteface public
       stock: 0,
       image: "../../assets/img/hamster_sirio.jpg",
       clearance: false,
+      quantity: 0,
     },
 
   ];
 
   constructor(){ }
+
+  upQuantity(hamster: Hamster): void{
+    if (hamster.quantity < hamster.stock) {
+      hamster.quantity++;
+    }
+  }
+
+  downQuantity(hamster: Hamster): void{
+    if (hamster.quantity > 0) {
+      hamster.quantity--;
+    }
+  }
+
+  changeQuantity(event: Event, hamster: Hamster): void {
+    event.preventDefault();
+    if ((hamster.quantity < 0) && (hamster.quantity > hamster.stock) ) {
+      hamster.quantity = 0;
+    }
+  }
+
 }

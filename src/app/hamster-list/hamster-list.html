@@ -6,19 +6,25 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         @for (hamster of hamsters; track hamster.type) { <!--"track" funciona como id-->
 
             <tr [ngClass]="{'clearance': hamster.clearance}"><!--[ngClass]"{'nombreclase': condición}" manipula clases CSS, directiva de atributo -->
-                <td><img [src]="hamster.image" [alt]="hamster.type"/></td>
+                <td><img [src]="hamster.image" width="100" class="img-thumbnail" [alt]="hamster.type"/></td>
                 <td>{{hamster.type}}</td>
                 <td>{{hamster.price | currency}}</td>
+
                 @if (hamster.stock > 0) {
                     <td>{{hamster.stock}}</td>
                     <td>
-                        <button class="btn btn-info">Agregar a carro</button>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(hamster)">-</button>
+                            <input type="text" [(ngModel)]="hamster.quantity" (keyup)="changeQuantity($event, hamster)"> 
+                                <!--[(ngModel)] estamos conectados ida y vuelta, "la cajita de banana"-->
+                                <!--(keyup) evento-->
+                        <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(hamster)">+</button>  
                     </td>
                     <!--<td>
                         <button (click)="addToCart(hamsters.id)" class="btn btn-add">Add to cart</button>
@@ -26,7 +32,7 @@
                 } @else {
                     <td><span class="badge text-bg-warning">Sin Stock</span></td>
                     <td>
-                        <button class="btn btn disabled">No se puede agregar a carro</button>
+                        <button class="btn btn-primary disabled">No se puede agregar a carro</button>
                     </td>
                 }
 

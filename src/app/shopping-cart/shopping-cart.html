@@ -1,4 +1,4 @@
-<img src="../../assets/img/cart.png" width="50px" alt="imagen de carrito de compras">
+<img src="../../assets/img/cart.png" alt="imagen de carrito de compras">
 <table class="table">
     
     @if (cart.length > 0){
@@ -15,10 +15,9 @@
             <tr [ngClass]="{'clearance': hamster.clearance}">
                 <td>{{hamster.type}}</td>
                 <td>{{hamster.price | currency}}</td>
-                <td>
-                    <button class="btn btn-danger">Vaciar carrito</button>
-                </td>
+                <td>{{hamster.quantity}}</td>
             </tr>
+            <button class="btn btn-danger">Vaciar carrito</button>
         } @empty {
             <tr>
                 <td colspan="3">Vacío</td>

@@ -6,6 +6,8 @@ import { App } from './app';
 import { HamsterList } from './hamster-list/hamster-list';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
 
+import {FormsModule} from '@angular/forms'; //Permite Two-Ways Data Binding
+
 @NgModule({
   declarations: [ //Declaro todo los componentes  que voy a usar
     App,
@@ -14,7 +16,8 @@ import { ShoppingCart } from './shopping-cart/shopping-cart';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
