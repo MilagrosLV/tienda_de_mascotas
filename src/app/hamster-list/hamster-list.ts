@@ -43,23 +43,8 @@ export class HamsterList { //"export" makes the inteface public
 
   constructor(){ }
 
-  upQuantity(hamster: Hamster): void{
-    if (hamster.quantity < hamster.stock) {
-      hamster.quantity++;
-    }
-  }
-
-  downQuantity(hamster: Hamster): void{
-    if (hamster.quantity > 0) {
-      hamster.quantity--;
-    }
-  }
-
-  changeQuantity(event: Event, hamster: Hamster): void {
-    event.preventDefault();
-    if ((hamster.quantity < 0) && (hamster.quantity > hamster.stock) ) {
-      hamster.quantity = 0;
-    }
+  mError(m: string){
+    alert(m);
   }
 
 }
