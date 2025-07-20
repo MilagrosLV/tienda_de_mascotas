@@ -49,6 +49,11 @@ export class HamsterList { //"export" makes the inteface public
 
   addToCart(hamster: Hamster): void{ //usamos service
     this.cart.addToCart(hamster);
+
+    //Control de STOCK
+    hamster.stock -= hamster.quantity;
+    hamster.quantity = 0; //Reiniciar a 0 para la sig compra refreshStock()
+
   }
 
   mError(m: string){
