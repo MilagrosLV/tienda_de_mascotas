@@ -8,7 +8,8 @@ import { ShoppingCart } from './shopping-cart/shopping-cart';
 
 import {FormsModule} from '@angular/forms';
 import { ShopAbout } from './shop-about/shop-about';
-import { ShopHamsters } from './shop-hamsters/shop-hamsters'; //Permite Two-Ways Data Binding
+import { ShopHamsters } from './shop-hamsters/shop-hamsters';
+import { InputInteger } from './input-integer/input-integer'; //Permite Two-Ways Data Binding
 
 @NgModule({
   declarations: [ //Declaro todo los componentes  que voy a usar
@@ -16,7 +17,8 @@ import { ShopHamsters } from './shop-hamsters/shop-hamsters'; //Permite Two-Ways
     HamsterList,
     ShoppingCart,
     ShopAbout,
-    ShopHamsters
+    ShopHamsters,
+    InputInteger
   ],
   imports: [
     BrowserModule,
