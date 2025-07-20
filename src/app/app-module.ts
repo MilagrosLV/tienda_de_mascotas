@@ -1,7 +1,7 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing-module';
+import { AppRoutingModule } from './app-routing-module'; //importar las rutas
 import { App } from './app';
 import { HamsterList } from './hamster-list/hamster-list';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
@@ -20,7 +20,7 @@ import { ShopHamsters } from './shop-hamsters/shop-hamsters'; //Permite Two-Ways
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, //indica dónde está la config de las rutas
     FormsModule
   ],
   providers: [
