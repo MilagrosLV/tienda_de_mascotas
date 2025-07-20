@@ -1,5 +1,5 @@
 <img src="../../assets/img/cart.png" alt="imagen de carrito de compras">
-<table class="table">
+<table class="table text-center">
     
     @if (cart.length > 0){
     <thead>
@@ -16,11 +16,22 @@
                 <td>{{hamster.type}}</td>
                 <td>{{hamster.price | currency}}</td>
                 <td>{{hamster.quantity}}</td>
+                <td>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
             </tr>
-            <button class="btn btn-danger">Vaciar carrito</button>
+
         } @empty {
             <tr>
                 <td colspan="3">Vacío</td>
+            </tr>
+        }
+
+        @if (cart !== null) {
+            <tr>
+                <td colspan="4">
+                    <button class="btn btn-danger">Vaciar carro</button>
+                </td>
             </tr>
         }
     </tbody>

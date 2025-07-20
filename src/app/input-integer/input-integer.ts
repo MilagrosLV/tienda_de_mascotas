@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-//import { Hamster } from "../hamster-list/hamster";
+import { Hamster } from "../hamster-list/hamster";
 
 @Component({
   selector: 'app-input-integer',
