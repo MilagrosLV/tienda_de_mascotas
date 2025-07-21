@@ -35,12 +35,13 @@
                     
                 } @else {
                     <td><span class="badge text-bg-warning">Sin Stock</span></td>
+                    <td colspan="2"></td>
                 }
 
             </tr>
         } @empty { <!--"@empty" funciona si el arreglo está vacío, es como un "@if" -->
             <tr>
-                <td colspan="4">No hay hamsters para mostrar</td>
+                <td colspan="6">No hay hamsters para mostrar</td>
             </tr>
         }
 
